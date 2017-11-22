@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import vn.commenau.model.LoaiMonAn;
 import vn.commenau.model.MonAn;
 import vn.commenau.model.NoiTro;
 import vn.commenau.repository.MonAnRepository;
@@ -38,5 +39,9 @@ public class MonAnService {
 	// delete 
 	public void delete(int id) {
 		monAnRepository.delete(id);
+	}
+
+	public List<MonAn> finByLoaiMonAn(LoaiMonAn loaiMonAn) {
+		return monAnRepository.findByLoaiMonAn(loaiMonAn);
 	}
 }

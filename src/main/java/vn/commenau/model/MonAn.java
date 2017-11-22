@@ -33,7 +33,6 @@ public class MonAn {
 
 	public MonAn() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public MonAn(int id, String tenmonan, String mota, String chitiet, float gia, String hinhanh, int rate,

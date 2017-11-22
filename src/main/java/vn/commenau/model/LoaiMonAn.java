@@ -2,6 +2,7 @@ package vn.commenau.model;
 
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -10,6 +11,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name="loaimonan")
@@ -22,7 +24,7 @@ public class LoaiMonAn {
 	private String hinhanh;
 	
 	@OneToMany(targetEntity=MonAn.class, mappedBy="loaimonan")
-	@JsonBackReference
+	@JsonIgnore
 	private Set<MonAn> monAn;
 	public LoaiMonAn() {
 		super();

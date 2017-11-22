@@ -7,7 +7,7 @@ import vn.commenau.model.LoaiMonAn;
 
 public interface LoaiMonAnRepository extends CrudRepository<LoaiMonAn, Integer> {
 
-	@Query("select * from LoaiMonAn Order By TenMonAn like %'?'%")
-	LoaiMonAn findbyName(String name) ;
+//	@Query("select * from LoaiMonAn Order By TenMonAn like %'?'%")
+//	LoaiMonAn findbyName(String name) ;
 
 }

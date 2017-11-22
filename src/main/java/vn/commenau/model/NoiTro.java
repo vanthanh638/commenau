@@ -11,6 +11,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name="noitro")
@@ -30,8 +31,12 @@ public class NoiTro {
 	private int soluotquantam;
 	
 	@OneToMany(targetEntity=MonAn.class, mappedBy="noitro")
-	@JsonBackReference
+	@JsonIgnore
 	private Set<MonAn> monAns;
+	
+	@OneToMany(targetEntity=DonHang.class, mappedBy="noitro")
+	@JsonBackReference
+	private Set<DonHang> donHangs;
 	
 	public NoiTro() {
 		super();

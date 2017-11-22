@@ -1,8 +1,14 @@
 package vn.commenau.model;
 
+import java.util.Set;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name="khachhang")
@@ -14,6 +20,10 @@ public class KhachHang {
 	private String fullname;
 	private String diachi;
 	private String sodienthoai;
+	
+	@OneToMany(targetEntity=DonHang.class, mappedBy="khachhang")
+	@JsonBackReference
+	private Set<DonHang> donHangs;
 	
 	public KhachHang() {
 		super();

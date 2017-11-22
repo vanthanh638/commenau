@@ -47,10 +47,10 @@ public class LoaiMonAnController {
 		}
 		return loaiMonAn;
 	}
-	@RequestMapping(value = "{name}", method = RequestMethod.GET )
-	public LoaiMonAn findbyName(@PathVariable("Name") String Name ){
-		return LoaiMonAnRepository.findbyName(Name);
-	}
+//	@RequestMapping(value = "{name}", method = RequestMethod.GET )
+//	public LoaiMonAn findbyName(@PathVariable("Name") String Name ){
+//		return LoaiMonAnRepository.findbyName(Name);
+//	}
 
 	// delete Item
 	@RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
